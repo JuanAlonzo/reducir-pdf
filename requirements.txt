@@ -1,0 +1,7 @@
+# Dependencias para comprimir PDFs con main.py
+pypdf>=5.0.0
+Pillow>=10.0.0
+
+# Nota:
+# main_ghostscript.py requiere tener instalado Ghostscript en el sistema
+# (descargar desde: https://www.ghostscript.com/download.html)

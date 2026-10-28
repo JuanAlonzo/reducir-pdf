@@ -1,0 +1,22 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+
+# Archivos PDF (ignorar documentos personales/sensibles)
+pdfs_originales/*.pdf
+pdfs_comprimidos/*.pdf
+
+# Conservar las carpetas en Git
+!pdfs_originales/.gitkeep
+!pdfs_comprimidos/.gitkeep
+
+# IDEs y sistemas
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
