@@ -11,8 +11,15 @@ if hasattr(sys.stdout, "reconfigure"):
     except (AttributeError, OSError, ValueError):
         pass
 
-INPUT_DIR = "pdfs_originales"
-OUTPUT_DIR = "pdfs_comprimidos"
+if getattr(sys, "frozen", False):
+    # Si corre como ejecutable compilado:
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    # Si corre como script .py normal:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+INPUT_DIR = os.path.join(BASE_DIR, "pdfs_originales")
+OUTPUT_DIR = os.path.join(BASE_DIR, "pdfs_comprimidos")
 IMAGE_QUALITY = 60  # Calidad de compresión de imágenes (1 a 100). 60 ofrece buen balance tamaño/legibilidad
 
 os.makedirs(INPUT_DIR, exist_ok=True)
@@ -58,3 +65,5 @@ else:
             print(f"[-] Error al procesar {filename}: {err}")
 
     print("\n[OK] Compresion terminada exitosamente.")
+
+input("\nPresiona [Enter] para cerrar...")

@@ -7,6 +7,16 @@ env/
 __pycache__/
 *.py[cod]
 
+# Archivos de configuración de Python
+*.pyo
+*.pyd
+
+# Build y dist
+build/
+dist/
+*.spec
+
+
 # Archivos PDF (ignorar documentos personales/sensibles)
 pdfs_originales/*.pdf
 pdfs_comprimidos/*.pdf
@@ -20,3 +30,6 @@ pdfs_comprimidos/*.pdf
 .idea/
 .DS_Store
 Thumbs.db
+
+# GS_PORTABLE
+gs_portable/
